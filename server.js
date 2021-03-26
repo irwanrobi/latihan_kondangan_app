@@ -3,9 +3,12 @@ const hbs = require('express-handlebars')
 const cors = require('cors')
 const app = express()
 const path = require('path')
+
+// ROUTES
 const home = require('./routes/home_routes')
 const register = require('./routes/register_routes')
 const login = require('./routes/login_routes')
+const dashboard = require('./routes/dashboard_routes')
 
 // atur DYNAMIC PORT agar bisa gunakan Heroku
 const PORT = process.env.PORT || 3000
@@ -28,6 +31,7 @@ app.engine('handlebars' , hbs({
 app.use('/', home)
 app.use('/register' , register)
 app.use('/login' , login)
+app.use('/dashboard' , dashboard)
 
 
 
