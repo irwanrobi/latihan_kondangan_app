@@ -1,0 +1,50 @@
+<main class="container-fluid dashboard">
+
+    <div class="side_menu">
+
+        <div class="side_menu_title">
+            Undangan Editor
+        </div>
+
+        <form action="/view" class="side_menu_editor" method="post">
+        
+            <div class="form_group">
+                <label for="mempelai_pria">Nama Mempelai Pria</label>
+                <input type="text" name="mempelai_pria" id="mempelai_pria" required>
+            </div>
+
+            <div class="form_group">
+                <label for="mempelai_wanita">Nama Mempelai Wanita</label>
+                <input type="text" name="mempelai_wanita" id="mempelai_wanita" required>
+            </div>
+
+            <div class="form_group">
+                <label for="tanggal_akad">Tanggal Akad</label>
+                <input type="datetime-local" name="tanggal_akad" id="tanggal_akad" required>
+            </div>
+
+            <div class="form_group">
+                <label for="tanggal_resepsi">Tanggal Resepsi</label>
+                <input type="datetime-local" name="tanggal_resepsi" id="tanggal_resepsi" required>
+            </div>
+
+            <div class="form_group">
+                <label for="lokasi">Lokasi</label>
+                <input type="text" name="lokasi" id="lokasi" placeholder="Paste lokasi Google Maps" required>
+                <button>Cari Lokasi</button>
+            </div>
+
+            <div class="form-group">
+                <label for="pesan">Pesan Pernikahan</label>
+                <textarea name="pesan" id="pesan" cols="30" rows="10"></textarea>
+            </div>
+
+        </form>
+
+    </div>
+
+    <section class="live_view">
+
+    </section>
+
+</main>

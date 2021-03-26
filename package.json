@@ -1,0 +1,16 @@
+{
+  "name": "kondangan_app",
+  "version": "1.0.0",
+  "description": "Sebuah web untuk undangan online",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js --watch"
+  },
+  "author": "irwanrobi",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1"
+  }
+}
