@@ -1,33 +1,114 @@
-<nav class="navbar">
-
-    <h1 class="brand">
-        Kondangan App
-    </h1>
 
     {{#if isLogin}}
 
-    <div class="user">
-        {{ user }} <i class="material-icons">user</i>
+
+
+    <nav class="navbar-dashboard">
+
+        <i class="material-icons menu-toggle" onclick="menuToggle()">chevron_left</i>
+        <i class="material-icons menu-toggle-back" onclick="menuToggleBack()">chevron_right</i>
+
+        <h1 class="brand">
+            <a href="/">
+                Kondangan App
+            </a>
+        </h1>
+
+        <div class="dashboard-menu" onclick="showDashboardMenu()">
+            {{ user }} <i class="material-icons">person</i>
+        </div>
+
+    </nav>
+
+    <div class="dashboard-menu-item">
+
+        <div class="db-menu-list">
+            <i class="material-icons">settings</i> Settings
+        </div>
+
+        <div class="db-menu-list">
+            <i class="material-icons">email</i> Undangan Saya
+        </div>
+
+        <div class="db-menu-list">
+            <i class="material-icons">logout</i> Logout
+        </div>
+
     </div>
 
     {{else}}
+    <nav class="navbar">
 
-    <ul class="menu">
+        <h1 class="brand">
+            <a href="/">
+                Kondangan App
+            </a>
+        </h1>
 
-        <li class="menu_item">
-            <a href="/">Home</a>
-        </li>
+        <ul class="menu">
 
-        <li class="menu_item">
-            <a href="/register">Register</a>
-        </li>
+            <li class="menu_item">
+                <a href="/">Home</a>
+            </li>
 
-        <li class="menu_item">
-            <a href="/login">Login</a>
-        </li>
+            <li class="menu_item">
+                <a href="/register">Register</a>
+            </li>
 
-    </ul>
+            <li class="menu_item">
+                <a href="/login">Login</a>
+            </li>
 
+        </ul>
+
+    </nav>
     {{/if}}
 
-</nav>
+    <script>
+
+        const menuToggle = () => {
+            let navbar = document.querySelector('.navbar-dashboard')
+            navbar.style.width = '90%'
+            navbar.style.transitionDelay = '.2s'
+
+            let cl = document.querySelector('.menu-toggle')
+            cl.style.display = 'none'
+
+            let cr = document.querySelector('.menu-toggle-back')
+            cr.style.display = 'initial'
+
+            let sideMenu = document.querySelector('.side-menu')
+            sideMenu.style.transform = 'translateX(-100%)'
+        }
+
+        const menuToggleBack = () => {
+
+            let navbar = document.querySelector('.navbar-dashboard')
+            navbar.style.width = '68%'
+
+            let cl = document.querySelector('.menu-toggle')
+            cl.style.display = 'initial'
+
+            let cr = document.querySelector('.menu-toggle-back')
+            cr.style.display = 'none'
+
+            let sideMenu = document.querySelector('.side-menu')
+            sideMenu.style.transform = 'translateX(0)'
+            sideMenu.style.transitionDelay = '.2s'
+        }
+
+        let show = false
+
+        const showDashboardMenu = () => {
+
+            let dashboard_menu_item = document.querySelector('.dashboard-menu-item')
+
+            if (!show) {
+                dashboard_menu_item.style.display = 'flex'
+                show = true
+            } else {
+                dashboard_menu_item.style.display = 'none'
+                show = false
+            }
+        }
+    </script>

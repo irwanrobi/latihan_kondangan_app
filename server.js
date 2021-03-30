@@ -14,7 +14,7 @@ const dashboard = require('./routes/dashboard_routes')
 const PORT = process.env.PORT || 3000
 
 // middleware
-app.use(cors())
+app.use(cors()) 
 app.use(express.static(path.join(__dirname , 'public')))
 app.use(express.urlencoded({extended : false}))
 
@@ -27,7 +27,8 @@ app.engine('handlebars' , hbs({
     defaultLayout : 'main_layout.handlebars'
 }))
 
-// ROUTING MENGGUNAKAN FOLDER ROUTS
+// ROUTING MENGGUNAKAN FOLDER ROUTES
+// mengatur route setiap request
 app.use('/', home)
 app.use('/register' , register)
 app.use('/login' , login)

@@ -1,3 +1,5 @@
+{{> Modal_image }}
+
 <main class="container-fluid dashboard">
 
     <div class="side-menu">
@@ -10,60 +12,56 @@
         
             <div class="form-group">
                 <label for="mempelai_pria">Nama Mempelai Pria</label>
-                <input type="text" name="mempelai_pria" id="mempelai_pria" required>
+                <input type="text" name="mempelai_pria" id="mempelai_pria" required onchange="handleChange(event)">
             </div>
 
             <div class="form-group">
                 <label for="mempelai_wanita">Nama Mempelai Wanita</label>
-                <input type="text" name="mempelai_wanita" id="mempelai_wanita" required>
+                <input type="text" name="mempelai_wanita" id="mempelai_wanita" required onchange="handleChange(event)">
             </div>
 
             <div class="form-group">
                 <label for="tanggal_akad">Tanggal Akad</label>
-                <input type="datetime-local" name="tanggal_akad" id="tanggal_akad" required>
+                <input type="datetime-local" name="tanggal_akad" id="tanggal_akad" require onchange="handleChange(event)">
             </div>
 
             <div class="form-group">
                 <label for="tanggal_resepsi">Tanggal Resepsi</label>
-                <input type="datetime-local" name="tanggal_resepsi" id="tanggal_resepsi" required>
+                <input type="datetime-local" name="tanggal_resepsi" id="tanggal_resepsi" required onchange="handleChange(event)">
             </div>
 
             <div class="form-group">
                 <label for="lokasi">Lokasi</label>
-                <input type="text" name="lokasi" id="lokasi" placeholder="Paste lokasi Google Maps" required>
+                <textarea name="lokasi" id="lokasi" required onchange="handleChange(event)"></textarea>
+                <input type="text" name="gmaps" id="gmaps" placeholder="Paste lokasi Google Maps" onchange="handleChange(event)">
                 <button>Cari Lokasi</button>
             </div>
 
             <div class="form-group">
                 <label for="pesan">Pesan Pernikahan</label>
-                <textarea name="pesan" id="pesan" cols="30" rows="10"></textarea>
+                <textarea name="pesan" id="pesan" cols="30" rows="5" onchange="handleChange(event)"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="font">Pilih Font:</label>
-                <select name="font" id="font">
-                    <option value="">Helvetica</option>
-                    <option value="">Montserrat</option>
-                    <option value="">Arial</option>
-                    <option value="">Raleway</option>
+                <select name="font" id="font" onchange="ubahFont(event)">
+                    <option value="Lobster Two">Lobster Two</option>
+                    <option value="Pacifico">Pacifico</option>
+                    <option value="Satisfy">Satisfy</option>
+                    <option value="Great Vibes">Great Vibes</option>
                 </select>
             </div>
 
             <div class="form-group">
+                <label for="font_size">Ukuran Font</label>
+                <input type="range" name="font_size" id="font_size" min="10" max="100" onchange="ubahFontSize(event)" value="25">
+            </div>
+
+            <div class="form-group">
                 <label for="background">Pilih Background</label>
-                <select name="background" id="background">
-                    <option value="">
-                        <img src="https://picsum.photos/seed/13/200" alt="image-01">
-                    </option>
-
-                    <option value="">
-                        <img src="https://picsum.photos/seed/15/200" alt="image-02">
-                    </option>
-
-                    <option value="">
-                        <img src="https://picsum.photos/seed/16/200" alt="image-03">
-                    </option>
-                </select>
+                <div id="background" class="btn-background">
+                    <i class="material-icons">wallpaper</i>
+                </div>
             </div>
 
             <button class="editor-save" type="submit">Save</button>
@@ -72,8 +70,24 @@
 
     </div>
 
-    <section class="live_view">
+    <section class="live_view container-fluid flex-center">
 
+        <h3 class="lv_akad">Jakarta 13 Juli 2021</h3>
+        <h1 class="lv_mempelai">
+            Irwan & Megan Fox
+        </h1>
+        <h3 class="lv_resepsi">
+            Mohon doa restunya, kami akan menyelenggarakan resepsi pernikahan,
+            <br/>
+            <b class="lv_resepsi_time">14 Juli 2021</b>
+            <br/>
+            <b class="lv_resepsi_lokasi">
+                Kempinski Hotel Jakarta
+            </b>
+        </h3>
+        <p class="lv_pesan">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam excepturi voluptatibus delectus ratione? Quisquam natus praesentium cumque animi, doloremque sapiente nulla libero nihil eaque quam repellat, veritatis atque voluptatum ut!
+        </p>
     </section>
 
 </main>
